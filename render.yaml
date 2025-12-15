@@ -1,4 +1,7 @@
 services:
+  # ---------------------------
+  # Backend API (FastAPI / Docker)
+  # ---------------------------
   - type: web
     name: aurora-api
     runtime: docker
@@ -9,12 +12,14 @@ services:
       - key: PORT
         value: 10000
 
-  - type: web
+  # ---------------------------
+  # Frontend (Vite / React Static Site)
+  # ---------------------------
+  - type: static
     name: aurora-frontend
-    runtime: static
     root: aurora-render/frontend
     buildCommand: npm install && npm run build
-    staticPublishPath: dist
+    publishDir: dist
     region: ohio
     envVars:
       - key: VITE_API_URL
