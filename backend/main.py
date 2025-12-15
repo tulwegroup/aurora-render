@@ -30,7 +30,7 @@ app.add_middleware(
 )
 
 # --- Shared Constants & State ---
-JOBS_DIR = "/app/jobs"
+JOBS_DIR = "./jobs"
 if not os.path.exists(JOBS_DIR):
     os.makedirs(JOBS_DIR, exist_ok=True)
 
