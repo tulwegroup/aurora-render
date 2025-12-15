@@ -2,7 +2,7 @@ services:
   - type: web
     name: aurora-api
     runtime: docker
-    root: aurora-render/backend
+    rootDir: aurora-render/backend
     region: ohio
     plan: free
     envVars:
